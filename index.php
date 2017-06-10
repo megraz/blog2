@@ -40,6 +40,11 @@ $posts[] = $file; //on prends file et on le met ds le tableau post, rajoute un e
 <article>
 <h2><?php echo basename($file, '.txt'); ?></h2>
 <p><?php echo file_get_contents('post/' .$file); ?></p>
+<form action="delete-post.php" method="POST">
+    <input type="hidden" name="filename" value="<?php
+    echo $file; ?>">
+<input type="submit" value="delete">
+</form>
 </article>
     <?php } ?> 
 
